@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAAF93E3-E592-4639-92A6-1C72EA65EC6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HdmiExtenderLib</RootNamespace>
+    <AssemblyName>HdmiExtenderLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PcapDotNet.Base, Version=1.0.1.29386, Culture=neutral, PublicKeyToken=4b6f3e583145a652, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PcapDotNet\PcapDotNet.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core, Version=1.0.1.29397, Culture=neutral, PublicKeyToken=4b6f3e583145a652, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PcapDotNet\PcapDotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core.Extensions, Version=1.0.1.29399, Culture=neutral, PublicKeyToken=4b6f3e583145a652, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PcapDotNet\PcapDotNet.Core.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Packets, Version=1.0.1.29387, Culture=neutral, PublicKeyToken=4b6f3e583145a652, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PcapDotNet\PcapDotNet.Packets.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HdmiExtenderReceiver.cs" />
+    <Compile Include="HdmiExtenderSender.cs" />
+    <Compile Include="HttpServer\Crypto\CertProperties.cs" />
+    <Compile Include="HttpServer\Crypto\CryptContext.cs" />
+    <Compile Include="HttpServer\Crypto\CryptKey.cs" />
+    <Compile Include="HttpServer\Crypto\DisposableObject.cs" />
+    <Compile Include="HttpServer\Crypto\KeyExchangeKey.cs" />
+    <Compile Include="HttpServer\Crypto\KeyType.cs" />
+    <Compile Include="HttpServer\Crypto\SignatureKey.cs" />
+    <Compile Include="HttpServer\Crypto\Win32ErrorHelper.cs" />
+    <Compile Include="HttpServer\Crypto\Win32Native.cs" />
+    <Compile Include="HttpServer\Mime.cs" />
+    <Compile Include="HttpServer\SimpleHttpServer.cs" />
+    <Compile Include="JpegAssembler.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoWebServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PcapDotNet\PcapDotNet.Base.dll" />
+    <Content Include="PcapDotNet\PcapDotNet.Base.pdb" />
+    <Content Include="PcapDotNet\PcapDotNet.Base.xml" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.dll" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.Extensions.dll" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.Extensions.pdb" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.Extensions.XML" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.pdb" />
+    <Content Include="PcapDotNet\PcapDotNet.Core.xml" />
+    <Content Include="PcapDotNet\PcapDotNet.Packets.dll" />
+    <Content Include="PcapDotNet\PcapDotNet.Packets.pdb" />
+    <Content Include="PcapDotNet\PcapDotNet.Packets.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

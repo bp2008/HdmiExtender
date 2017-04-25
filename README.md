@@ -10,16 +10,16 @@ It turns out that .NET's sockets are not quite low-level enough to read the full
 
 ## Who is it for?
 
-This project is intended for *computer literate* people, preferably with C# programming experience, who want to capture video and audio data from a [Lenkeng LKV373 HDMI Extender TX (Sender) device].
+This project is intended for *computer literate* people, preferably with C# programming experience, who want to capture video and audio data from a [Lenkeng LKV373 HDMI Extender TX (Sender) device](https://github.com/bp2008/HdmiExtender/wiki/Lenkeng-LKV373-HDMI-Extender-TX-%28Sender%29-device).
 
 ## Requirements
 
-* One [Lenkeng LKV373 HDMI Extender TX (Sender) device].  This was designed for the model with "V2.0" printed on the back, but it may work with the older model too.
+* One [Lenkeng LKV373 HDMI Extender TX (Sender) device](https://github.com/bp2008/HdmiExtender/wiki/Lenkeng-LKV373-HDMI-Extender-TX-%28Sender%29-device).  This was designed for the model with "V2.0" printed on the back, but it may work with the older model too.
 * A Windows PC **with WinPCap installed**
 * (Optional; Recommended) A second Network Interface adapter for the PC, so you can isolate the HDMI Extender Sender device from your LAN.  This will keep the video **broadcast** from the Sender device under control.
 * (Optional; Recommended) A fast CPU for real-time transcoding of the video data using FFMPEG.
 
-I have prepared some [ffmpeg sample configurations] to demonstrate some of the ways to consume the video and audio streams produced by HdmiExtender.
+I have prepared some [ffmpeg sample configurations](https://github.com/bp2008/HdmiExtender/wiki/ffmpeg-sample-configurations) to demonstrate some of the ways to consume the video and audio streams produced by HdmiExtender.
 
 ## Other thoughts
 
